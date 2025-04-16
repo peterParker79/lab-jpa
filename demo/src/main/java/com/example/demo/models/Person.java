@@ -8,7 +8,7 @@ import jakarta.persistence.*;
 public class Person {
     @Id // Indica a nuestra app que es una PRIMARY key
     @GeneratedValue(strategy=GenerationType.IDENTITY)//Notación para indicar que es autoincremental
-    private int id;
+    private long id;
 
     @Column(name ="name")
     String name;
@@ -25,11 +25,11 @@ public class Person {
         this.age = age;
     }
 
-    public int getId() {
+    public long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(long id) {
         this.id = id;
     }
 
