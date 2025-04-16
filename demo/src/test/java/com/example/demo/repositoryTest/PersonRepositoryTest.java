@@ -52,8 +52,9 @@ public class PersonRepositoryTest {
     @DisplayName("Comprobar datos de la persona John Doe")
     public void testJohnDoe() {
         personRepository.save(new Person("John Doe",30));
-        Optional<Person> foundPerson = personRepository.findByName("John Doe");
+        List<Person> foundPerson = personRepository.findByName("John Doe");
        // assertEquals("John Doe", foundPerson.getName());
+        foundPerson.forEach(person -> assertEquals("John Doe", person.getName()));
 
     }
 
