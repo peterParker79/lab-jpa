@@ -8,6 +8,8 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -50,6 +52,9 @@ public class PersonRepositoryTest {
     @DisplayName("Comprobar datos de la persona John Doe")
     public void testJohnDoe() {
         personRepository.save(new Person("John Doe",30));
+        Optional<Person> foundPerson = personRepository.findByName("John Doe");
+       // assertEquals("John Doe", foundPerson.getName());
+
     }
 
 }
