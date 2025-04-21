@@ -1,7 +1,7 @@
 package com.example.demo.models;
 import jakarta.persistence.*;
 
-
+//https://github.com/IHJavaApril2025/lab-jpa
 
 @Entity
 @Table(name="person")
@@ -50,13 +50,21 @@ public class Person {
     }
 
     @Override
-    public String toString() {
+  /*  public String toString() {
         return "Person{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", age=" + age +
-                '}';
+                '}' + "\n\n";
+    }*/
+    public String toString() {
+        return "{\n" +
+                "  \"id\": " + id + ",\n" +
+                "  \"name\": \"" + name + "\",\n" +
+                "  \"age\": " + age + "\n" +
+                "}";
     }
+
 }
 
 
