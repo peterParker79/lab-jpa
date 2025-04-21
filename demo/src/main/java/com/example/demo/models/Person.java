@@ -1,6 +1,8 @@
 package com.example.demo.models;
+import com.google.gson.Gson;
 import jakarta.persistence.*;
-
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 //https://github.com/IHJavaApril2025/lab-jpa
 
 @Entity
@@ -50,21 +52,18 @@ public class Person {
     }
 
     @Override
-  /*  public String toString() {
-        return "Person{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", age=" + age +
-                '}' + "\n\n";
-    }*/
-    public String toString() {
+    /*public String toString() {
         return "{\n" +
                 "  \"id\": " + id + ",\n" +
                 "  \"name\": \"" + name + "\",\n" +
                 "  \"age\": " + age + "\n" +
                 "}";
-    }
+    }*/
 
+    public String toString(){
+        Gson gson = new GsonBuilder().setPrettyPrinting().create();
+        return gson.toJson(this);
+    }
 }
 
 
