@@ -58,4 +58,14 @@ public class PersonRepositoryTest {
 
     }
 
+    @Test
+    @DisplayName("Comprobar la edad de la persona que es 30") //
+    public void testEdad() {
+        personRepository.save(new Person("John Doe", 30));
+        List<Person> foundPerson = personRepository.findByName("John Doe");
+        // assertEquals("John Doe", foundPerson.getName());
+        foundPerson.forEach(person -> assertEquals(30, person.getAge()));
+
+    }
+
 }
